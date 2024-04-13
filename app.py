@@ -19,6 +19,16 @@ def fetch_portfolio_data(risk_level):
     except requests.RequestException as e:
         return {"error": f"Failed to fetch data: {str(e)}"}
 
+def interpret_risk_profile(risk_level):
+    if 1 <= risk_level <= 3:
+        return "Conservative"
+    elif 4 <= risk_level <= 6:
+        return "Moderate"
+    elif 7 <= risk_level <= 10:
+        return "Aggressive"
+    else:
+        return "Unknown"
+
 def advisor_profile(data, user_query=None):
     """Generate investment advice using GPT model based on JSON data and user query."""
     if data is None or 'error' in data:
@@ -27,7 +37,7 @@ def advisor_profile(data, user_query=None):
         user_input = json.dumps(data)
     else:  # Subsequent user query
         user_input = user_query
-
+        
     system_message = 'You are an investment advisor. Analyse the data and provide holistic advice in short, simple words to a customer, based on the JSON data.'
     try:
         response = client.chat.completions.create(
