@@ -52,7 +52,7 @@ def advisor_profile(data, user_query=None):
             frequency_penalty=0,
             presence_penalty=0
         )
-        return response.choices[0].message['content']
+        return response.choices[0].message.content
     except Exception as e:
         return f"An error occurred while generating advice: {str(e)}"
 
