@@ -1,8 +1,8 @@
 openai
 requests
-streamlit, 
-langchain, 
-PyPDF2, 
-faiss-cpu, 
-tiktoken, 
+streamlit
+langchain 
+PyPDF2
+faiss-cpu 
+tiktoken 
 langchain-openai
