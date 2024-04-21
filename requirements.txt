@@ -1,8 +1,9 @@
 openai
 requests
 streamlit
+langchain-openai
 langchain 
 PyPDF2
 faiss-cpu 
 tiktoken 
-langchain-openai
+
