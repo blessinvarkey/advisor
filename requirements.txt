@@ -1,9 +1,7 @@
-openai
-requests
 streamlit
-langchain-openai
-langchain 
+langchain
+openai
 PyPDF2
-faiss-cpu 
-tiktoken 
-
+faiss-cpu
+tiktoken
+langchain-openai
